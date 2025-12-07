@@ -12,6 +12,6 @@ namespace FinalBonSucreApp
 
         public double Price { get; set; }
 
-        public int Ctegory { get; set; }
+        public int Category { get; set; }
     }
 }

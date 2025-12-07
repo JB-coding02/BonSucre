@@ -1,39 +1,35 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Text;
 
 namespace FinalBonSucreApp
 {
-    static class CustomerDb
+    internal class DessertDb
     {
+
         public static SqlConnection GetConnection()
         {
             // Create and return a connection to the database
             return new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BonSucre;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;Command Timeout=30");
         }
-        /// <summary>
-        /// Adds a Customer to the database
-        /// </summary>
-        /// <param name="customer">The customer to be added</param>
-        public static void AddCustomer(Customer customer)
+        public static void AddDessert(Dessert dessert)
         {
             // Establish connection to database
             SqlConnection con = GetConnection();
-            
+
             // Prepare Insert Statement
             SqlCommand addCommand = new SqlCommand();
             addCommand.Connection = con;
             addCommand.CommandText = """
-                INSERT INTO Customers (CustomerId, Name, Email, DateOfBirth)
-                VALUES (@CustomerId, @Name, @Email, @DateOfBirth)
+                INSERT INTO Dessert (DessertId, Name, Price, Category)
+                VALUES (@DessertId, @Name, @Price, @Category);
                 SELECT SCOPE_IDENTITY();
                 """;
-            addCommand.Parameters.AddWithValue("@CustomerId", customer.CustomerID);
-            addCommand.Parameters.AddWithValue("@Name", customer.Name);
-            addCommand.Parameters.AddWithValue("@Email", customer.Email);
-            addCommand.Parameters.AddWithValue("@DateOfBirth", customer.DateOfBirth);
+            addCommand.Parameters.AddWithValue("@DessertId", dessert.Name);
+            addCommand.Parameters.AddWithValue("@Name", dessert.Name);
+            addCommand.Parameters.AddWithValue("@Price", dessert.Price);
+            addCommand.Parameters.AddWithValue("@Category", dessert.Category);
 
             // Open connection to the database
             con.Open();
@@ -45,7 +41,7 @@ namespace FinalBonSucreApp
             con.Close();
         }
 
-        public static List<Customer> GetAllCustomers()
+        public static List<Dessert> GetAllDesserts()
         {
             // Get a database connection
             SqlConnection con = GetConnection();
@@ -56,8 +52,8 @@ namespace FinalBonSucreApp
             // Prepare SQL command
             // Raw string literal - https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/raw-string
             string query = """
-            SELECT DessertId, Email, Name, DateOfBirth
-            FROM Customer
+            SELECT DessertId, Price, Name, Category
+            FROM Dessert
             ORDER BY Name ASC
             """;
             SqlCommand selectCommand = new()
@@ -70,19 +66,19 @@ namespace FinalBonSucreApp
             SqlDataReader reader = selectCommand.ExecuteReader();
 
             // Store the results
-            List<Customer> allDesserts = new();
+            List<Dessert> allDesserts = new();
             while (reader.Read())
             {
-                Customer customer = new()
+                Dessert dessert = new()
                 {
                     Name = reader["Name"].ToString(),
-                    CustomerID = Convert.ToInt32(reader["CustomerId"]),
-                    Email = Convert.ToString(reader["Email"]),
-                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"])
+                    DessertId = Convert.ToInt32(reader["DessertId"]),
+                    Price = Convert.ToDouble(reader["Price"]),
+                    Category = Convert.ToInt32(reader["Category"])
                 };
 
                 //Make sure to add each product to the list so it gets returned.
-                allDesserts.Add(customer);
+                allDesserts.Add(dessert);
             }
 
             // Close connection
@@ -91,22 +87,40 @@ namespace FinalBonSucreApp
             return allDesserts;
         }
 
-        public static void UpdateCustomer(Customer customer)
+        public static void UpdateDessert(Dessert dessert)
         {
-            throw new NotImplementedException();
+
         }
 
-        public static void DeleteCustomer(Customer customer)
+        public static void DeleteDessert(Dessert dessert)
         {
-            throw new NotImplementedException();
+            DeleteDessert(dessert.DessertId);
         }
 
-        public static void DeleteCustomer(int CustomerId)
+        public static void DeleteDessert(int DessertId)
         {
-            throw new NotImplementedException();
+            // Get a database connection
+            SqlConnection con = GetConnection();
+            // Open connection
+            con.Open();
+            // Prepare SQL command
+            string query = """
+            DELETE FROM Dessert
+            WHERE DessertId = @DessertId
+            """;
+            SqlCommand deleteCommand = new()
+            {
+                Connection = con,
+                CommandText = query
+            };
+            deleteCommand.Parameters.AddWithValue("@DessertId", DessertId);
+            // Execute command on the db
+            deleteCommand.ExecuteNonQuery();
+            // Close connection to database
+            con.Close();
         }
 
-        public static Customer GetCustomer(int CustomerId)
+        public static Dessert GetDessert(int dessertId)
         {
             throw new NotImplementedException();
         }
