@@ -124,7 +124,25 @@ namespace FinalBonSucreApp
 
         public static void DeleteCustomer(int CustomerId)
         {
-            throw new NotImplementedException();
+            // Get a database connection
+            SqlConnection con = GetConnection();
+            // Open connection
+            con.Open();
+            // Prepare SQL command
+            string query = """
+            DELETE FROM Customers
+            WHERE CustomerId = @CustomerId
+            """;
+            SqlCommand deleteCommand = new()
+            {
+                Connection = con,
+                CommandText = query
+            };
+            deleteCommand.Parameters.AddWithValue("@CustomerId", CustomerId);
+            // Execute command on the db
+            deleteCommand.ExecuteNonQuery();
+            // Close connection to database
+            con.Close();
         }
 
         public static Customer GetCustomer(int CustomerId)
