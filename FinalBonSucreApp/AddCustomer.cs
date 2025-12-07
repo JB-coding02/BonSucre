@@ -24,6 +24,21 @@ namespace FinalBonSucreApp
                 MessageBox.Show("Please fill in all fields.");
                 return;
             }
+            if (!DateTime.TryParse(TxtDateOfBirth.Text, out _))
+            {
+                MessageBox.Show("Please enter a valid date for Date of Birth.");
+                return;
+            }
+            if (!TxtEmail.Text.Contains("@"))
+            {
+                MessageBox.Show("Please enter a valid email address.");
+                return;
+            }
+            if (DateTime.Parse(TxtDateOfBirth.Text) > DateTime.Now)
+            {
+                MessageBox.Show("Date of Birth cannot be in the future.");
+                return;
+            }
             Customer newCustomer = new Customer
             {
                 Name = TxtName.Text,

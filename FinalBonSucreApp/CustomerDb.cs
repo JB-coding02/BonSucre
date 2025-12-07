@@ -91,14 +91,35 @@ namespace FinalBonSucreApp
             return allDesserts;
         }
 
-        public static void UpdateCustomer(Customer customer)
+        public static void UpdateCustomer(int CustomerId, string? NewName, string? NewEmail, DateTime DateOfBirth)
         {
-            throw new NotImplementedException();
+            // Get a database connection
+            SqlConnection con = GetConnection();
+            // Open connection
+            con.Open();
+            // Prepare SQL command
+            string query = """
+            UPDATE Customers
+            SET Email = @NewEmail,
+                Name = @NewName
+            WHERE CustomerId = @CustomerId
+            """;
+            SqlCommand updateCommand = new()
+            {
+                Connection = con,
+                CommandText = query
+            };
+            updateCommand.Parameters.AddWithValue("@NewEmail", NewEmail);
+            updateCommand.Parameters.AddWithValue("@NewName", NewName);
+            // Execute command on the db
+            updateCommand.ExecuteNonQuery();
+            // Close connection to database
+            con.Close();
         }
 
         public static void DeleteCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            DeleteCustomer(customer.CustomerID);
         }
 
         public static void DeleteCustomer(int CustomerId)

@@ -87,9 +87,33 @@ namespace FinalBonSucreApp
             return allDesserts;
         }
 
-        public static void UpdateDessert(Dessert dessert)
+        public static void UpdateDessert(string NewCategory, double NewPrice, int DessertId, string? NewName)
         {
-
+            // Get a database connection
+            SqlConnection con = GetConnection();
+            // Open connection
+            con.Open();
+            // Prepare SQL command
+            string query = """
+            UPDATE Desserts
+            SET Price = @NewPrice,
+                Name = @NewName, 
+                Category = @NewCategory
+            WHERE DessertId = @DessertId
+            """;
+            SqlCommand updateCommand = new()
+            {
+                Connection = con,
+                CommandText = query
+            };
+            updateCommand.Parameters.AddWithValue("@NewPrice", NewPrice);
+            updateCommand.Parameters.AddWithValue("@DessertId", DessertId);
+            updateCommand.Parameters.AddWithValue("@NewName", NewName);
+            updateCommand.Parameters.AddWithValue("@NewCategory", NewCategory);
+            // Execute command on the db
+            updateCommand.ExecuteNonQuery();
+            // Close connection to database
+            con.Close();
         }
 
         public static void DeleteDessert(Dessert dessert)
