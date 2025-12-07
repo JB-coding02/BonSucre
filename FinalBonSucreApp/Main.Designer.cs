@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             BtnAddCustomer = new Button();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            CBoxCustomer = new ComboBox();
+            CBoxDessert = new ComboBox();
             GBoxAddReview = new GroupBox();
+            BtnAddReview = new Button();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             TxtReviewScore = new TextBox();
-            BtnAddReview = new Button();
             GBoxAddReview.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,21 +50,21 @@
             BtnAddCustomer.UseVisualStyleBackColor = true;
             BtnAddCustomer.Click += BtnAddCustomer_Click;
             // 
-            // comboBox1
+            // CBoxCustomer
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(230, 30);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(182, 33);
-            comboBox1.TabIndex = 1;
+            CBoxCustomer.FormattingEnabled = true;
+            CBoxCustomer.Location = new Point(230, 30);
+            CBoxCustomer.Name = "CBoxCustomer";
+            CBoxCustomer.Size = new Size(182, 33);
+            CBoxCustomer.TabIndex = 1;
             // 
             // comboBox2
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(230, 81);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(182, 33);
-            comboBox2.TabIndex = 2;
+            CBoxDessert.FormattingEnabled = true;
+            CBoxDessert.Location = new Point(230, 81);
+            CBoxDessert.Name = "comboBox2";
+            CBoxDessert.Size = new Size(182, 33);
+            CBoxDessert.TabIndex = 2;
             // 
             // GBoxAddReview
             // 
@@ -73,14 +73,24 @@
             GBoxAddReview.Controls.Add(label2);
             GBoxAddReview.Controls.Add(label1);
             GBoxAddReview.Controls.Add(TxtReviewScore);
-            GBoxAddReview.Controls.Add(comboBox1);
-            GBoxAddReview.Controls.Add(comboBox2);
+            GBoxAddReview.Controls.Add(CBoxCustomer);
+            GBoxAddReview.Controls.Add(CBoxDessert);
             GBoxAddReview.Location = new Point(12, 12);
             GBoxAddReview.Name = "GBoxAddReview";
             GBoxAddReview.Size = new Size(455, 290);
             GBoxAddReview.TabIndex = 3;
             GBoxAddReview.TabStop = false;
             GBoxAddReview.Text = "Add Review";
+            // 
+            // BtnAddReview
+            // 
+            BtnAddReview.Location = new Point(93, 198);
+            BtnAddReview.Name = "BtnAddReview";
+            BtnAddReview.Size = new Size(161, 34);
+            BtnAddReview.TabIndex = 7;
+            BtnAddReview.Text = "Add Review";
+            BtnAddReview.UseVisualStyleBackColor = true;
+            BtnAddReview.Click += BtnAddReview_Click;
             // 
             // label3
             // 
@@ -117,16 +127,6 @@
             TxtReviewScore.Size = new Size(182, 31);
             TxtReviewScore.TabIndex = 3;
             // 
-            // BtnAddReview
-            // 
-            BtnAddReview.Location = new Point(93, 198);
-            BtnAddReview.Name = "BtnAddReview";
-            BtnAddReview.Size = new Size(161, 34);
-            BtnAddReview.TabIndex = 7;
-            BtnAddReview.Text = "Add Review";
-            BtnAddReview.UseVisualStyleBackColor = true;
-            BtnAddReview.Click += BtnAddReview_Click;
-            // 
             // BonSucreForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -145,8 +145,8 @@
         #endregion
 
         private Button BtnAddCustomer;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox CBoxCustomer;
+        private ComboBox CBoxDessert;
         private GroupBox GBoxAddReview;
         private TextBox TxtReviewScore;
         private Label label3;

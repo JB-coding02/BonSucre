@@ -20,8 +20,8 @@ namespace FinalBonSucreApp
 
         private void BtnAddReview_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem == null 
-             || comboBox2.SelectedItem == null 
+            if (CBoxCustomer.SelectedItem == null 
+             || CBoxDessert.SelectedItem == null 
              || string.IsNullOrWhiteSpace(TxtReviewScore.Text))
             {
                 MessageBox.Show("Please fill in all fields.");
@@ -34,8 +34,8 @@ namespace FinalBonSucreApp
             }
             Review newReview = new Review
             {
-                CustomerId = ((Customer)comboBox1.SelectedItem).CustomerID,
-                DessertId = ((Dessert)comboBox2.SelectedItem).DessertId,
+                CustomerId = ((Customer)CBoxCustomer.SelectedItem).CustomerID,
+                DessertId = ((Dessert)CBoxDessert.SelectedItem).DessertId,
                 Score = int.Parse(TxtReviewScore.Text)
             };
             ReviewDb.AddReview(newReview);
