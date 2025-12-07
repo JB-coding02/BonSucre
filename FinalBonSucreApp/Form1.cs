@@ -17,5 +17,29 @@ namespace FinalBonSucreApp
             var addCustomerForm = new AddCustomerForm();
             addCustomerForm.Show();
         }
+
+        private void BtnAddReview_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == null 
+             || comboBox2.SelectedItem == null 
+             || string.IsNullOrWhiteSpace(TxtReviewScore.Text))
+            {
+                MessageBox.Show("Please fill in all fields.");
+                return;
+            }
+            if (!int.TryParse(TxtReviewScore.Text, out int score) || score < 1 || score > 5)
+            {
+                MessageBox.Show("Please enter a valid score between 1 and 5.");
+                return;
+            }
+            Review newReview = new Review
+            {
+                CustomerId = ((Customer)comboBox1.SelectedItem).CustomerID,
+                DessertId = ((Dessert)comboBox2.SelectedItem).DessertId,
+                Score = int.Parse(TxtReviewScore.Text)
+            };
+            ReviewDb.AddReview(newReview);
+            MessageBox.Show("Review added successfully!");
+        }
     }
 }

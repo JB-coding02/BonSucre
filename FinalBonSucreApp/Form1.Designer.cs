@@ -31,9 +31,13 @@
             BtnAddCustomer = new Button();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
-            groupBox1 = new GroupBox();
+            GBoxAddReview = new GroupBox();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             TxtReviewScore = new TextBox();
-            groupBox1.SuspendLayout();
+            BtnAddReview = new Button();
+            GBoxAddReview.SuspendLayout();
             SuspendLayout();
             // 
             // BtnAddCustomer
@@ -49,7 +53,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(77, 30);
+            comboBox1.Location = new Point(230, 30);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(182, 33);
             comboBox1.TabIndex = 1;
@@ -57,42 +61,84 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(77, 81);
+            comboBox2.Location = new Point(230, 81);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(182, 33);
             comboBox2.TabIndex = 2;
             // 
-            // groupBox1
+            // GBoxAddReview
             // 
-            groupBox1.Controls.Add(TxtReviewScore);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(comboBox2);
-            groupBox1.Location = new Point(12, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(323, 227);
-            groupBox1.TabIndex = 3;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            GBoxAddReview.Controls.Add(BtnAddReview);
+            GBoxAddReview.Controls.Add(label3);
+            GBoxAddReview.Controls.Add(label2);
+            GBoxAddReview.Controls.Add(label1);
+            GBoxAddReview.Controls.Add(TxtReviewScore);
+            GBoxAddReview.Controls.Add(comboBox1);
+            GBoxAddReview.Controls.Add(comboBox2);
+            GBoxAddReview.Location = new Point(12, 12);
+            GBoxAddReview.Name = "GBoxAddReview";
+            GBoxAddReview.Size = new Size(455, 290);
+            GBoxAddReview.TabIndex = 3;
+            GBoxAddReview.TabStop = false;
+            GBoxAddReview.Text = "Add Review";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 144);
+            label3.Name = "label3";
+            label3.Size = new Size(115, 25);
+            label3.TabIndex = 6;
+            label3.Text = "Review Score";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 84);
+            label2.Name = "label2";
+            label2.Size = new Size(71, 25);
+            label2.TabIndex = 5;
+            label2.Text = "Dessert";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 33);
+            label1.Name = "label1";
+            label1.Size = new Size(89, 25);
+            label1.TabIndex = 4;
+            label1.Text = "Customer";
             // 
             // TxtReviewScore
             // 
-            TxtReviewScore.Location = new Point(77, 141);
+            TxtReviewScore.Location = new Point(230, 141);
             TxtReviewScore.Name = "TxtReviewScore";
+            TxtReviewScore.PlaceholderText = "1 - 5";
             TxtReviewScore.Size = new Size(182, 31);
             TxtReviewScore.TabIndex = 3;
+            // 
+            // BtnAddReview
+            // 
+            BtnAddReview.Location = new Point(93, 198);
+            BtnAddReview.Name = "BtnAddReview";
+            BtnAddReview.Size = new Size(161, 34);
+            BtnAddReview.TabIndex = 7;
+            BtnAddReview.Text = "Add Review";
+            BtnAddReview.UseVisualStyleBackColor = true;
+            BtnAddReview.Click += BtnAddReview_Click;
             // 
             // BonSucreForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(groupBox1);
+            Controls.Add(GBoxAddReview);
             Controls.Add(BtnAddCustomer);
             Name = "BonSucreForm";
             Text = "Bon Sucre";
             Load += Form1_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            GBoxAddReview.ResumeLayout(false);
+            GBoxAddReview.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -101,7 +147,11 @@
         private Button BtnAddCustomer;
         private ComboBox comboBox1;
         private ComboBox comboBox2;
-        private GroupBox groupBox1;
+        private GroupBox GBoxAddReview;
         private TextBox TxtReviewScore;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private Button BtnAddReview;
     }
 }
