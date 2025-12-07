@@ -1,8 +1,8 @@
 namespace FinalBonSucreApp
 {
-    public partial class Form1 : Form
+    public partial class BonSucreForm : Form
     {
-        public Form1()
+        public BonSucreForm()
         {
             InitializeComponent();
         }
@@ -10,6 +10,12 @@ namespace FinalBonSucreApp
         private void Form1_Load(object sender, EventArgs e)
         {
             Customer cus = new Customer();
+        }
+
+        private void BtnAddCustomer_Click(object sender, EventArgs e)
+        {
+            var addCustomerForm = new AddCustomerForm();
+            addCustomerForm.Show();
         }
     }
 }
