@@ -1,6 +1,6 @@
 ﻿namespace FinalBonSucreApp
 {
-    partial class ReviewDisplay
+    partial class ReviewDisplayForm
     {
         /// <summary>
         /// Required designer variable.

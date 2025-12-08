@@ -47,6 +47,8 @@ namespace FinalBonSucreApp
             };
             CustomerDb.AddCustomer(newCustomer);
             MessageBox.Show($"Customer {newCustomer.Name} added successfully!");
+
+            Close();
         }
     }
 }

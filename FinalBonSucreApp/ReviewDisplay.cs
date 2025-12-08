@@ -9,9 +9,9 @@ using Microsoft.Data.SqlClient;
 
 namespace FinalBonSucreApp
 {
-    public partial class ReviewDisplay : Form
+    public partial class ReviewDisplayForm : Form
     {
-        public ReviewDisplay()
+        public ReviewDisplayForm()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace FinalBonSucreApp
                 r.Score
                 FROM Reviews r
                 JOIN Customers c ON r.CustomerId = c.CustomerId
-                JOIN Dessert d ON r.DessertId = d.DessertId
+                JOIN Desserts d ON r.DessertId = d.DessertId
                 ORDER BY r.ReviewId ASC
                 """;
                 using SqlConnection con = ReviewDb.GetConnection();
