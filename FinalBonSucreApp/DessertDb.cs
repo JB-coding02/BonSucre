@@ -53,7 +53,7 @@ namespace FinalBonSucreApp
             // Raw string literal - https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/raw-string
             string query = """
             SELECT DessertId, Price, Name, Category
-            FROM Dessert
+            FROM Desserts
             ORDER BY Name ASC
             """;
             SqlCommand selectCommand = new()
@@ -129,7 +129,7 @@ namespace FinalBonSucreApp
             con.Open();
             // Prepare SQL command
             string query = """
-            DELETE FROM Dessert
+            DELETE FROM Desserts
             WHERE DessertId = @DessertId
             """;
             SqlCommand deleteCommand = new()

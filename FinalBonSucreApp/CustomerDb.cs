@@ -57,7 +57,7 @@ namespace FinalBonSucreApp
             // Raw string literal - https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/raw-string
             string query = """
             SELECT DessertId, Email, Name, DateOfBirth
-            FROM Customer
+            FROM Customers
             ORDER BY Name ASC
             """;
             SqlCommand selectCommand = new()

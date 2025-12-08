@@ -136,7 +136,6 @@
             Controls.Add(BtnAddCustomer);
             Name = "BonSucreForm";
             Text = "Bon Sucre";
-            Load += Form1_Load;
             GBoxAddReview.ResumeLayout(false);
             GBoxAddReview.PerformLayout();
             ResumeLayout(false);
