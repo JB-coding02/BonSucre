@@ -105,5 +105,19 @@ namespace FinalBonSucreApp
         {
             ReloadAll();
         }
+
+        private void BtnUpdateDessert_Click(object sender, EventArgs e)
+        {
+            var updateDessertForm = new UpdateDessertForm();
+            updateDessertForm.Show();
+            updateDessertForm.FormClosed += (s, args) => ReloadDesserts();
+        }
+
+        private void BtnUpdateCustomer_Click(object sender, EventArgs e)
+        {
+            var updateCustomerForm = new UpdateCustomerForm();
+            updateCustomerForm.Show();
+            updateCustomerForm.FormClosed += (s, args) => ReloadCustomers();
+        }
     }
 }

@@ -41,6 +41,8 @@
             BtnAddDessert = new Button();
             BtnDeleteCustomer = new Button();
             BtnDeleteDessert = new Button();
+            BtnUpdateDessert = new Button();
+            BtnUpdateCustomer = new Button();
             GBoxAddReview.SuspendLayout();
             SuspendLayout();
             // 
@@ -172,11 +174,33 @@
             BtnDeleteDessert.UseVisualStyleBackColor = true;
             BtnDeleteDessert.Click += BtnDeleteDessert_Click;
             // 
+            // BtnUpdateDessert
+            // 
+            BtnUpdateDessert.Location = new Point(12, 308);
+            BtnUpdateDessert.Name = "BtnUpdateDessert";
+            BtnUpdateDessert.Size = new Size(112, 59);
+            BtnUpdateDessert.TabIndex = 7;
+            BtnUpdateDessert.Text = "Update Dessert";
+            BtnUpdateDessert.UseVisualStyleBackColor = true;
+            BtnUpdateDessert.Click += BtnUpdateDessert_Click;
+            // 
+            // BtnUpdateCustomer
+            // 
+            BtnUpdateCustomer.Location = new Point(139, 308);
+            BtnUpdateCustomer.Name = "BtnUpdateCustomer";
+            BtnUpdateCustomer.Size = new Size(112, 59);
+            BtnUpdateCustomer.TabIndex = 8;
+            BtnUpdateCustomer.Text = "Update Customer";
+            BtnUpdateCustomer.UseVisualStyleBackColor = true;
+            BtnUpdateCustomer.Click += BtnUpdateCustomer_Click;
+            // 
             // BonSucreForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(BtnUpdateCustomer);
+            Controls.Add(BtnUpdateDessert);
             Controls.Add(BtnDeleteDessert);
             Controls.Add(BtnDeleteCustomer);
             Controls.Add(BtnAddDessert);
@@ -205,5 +229,7 @@
         private Button BtnDeleteCustomer;
         private Button BtnDeleteDessert;
         private Button BtnShowAllReviews;
+        private Button BtnUpdateDessert;
+        private Button BtnUpdateCustomer;
     }
 }
