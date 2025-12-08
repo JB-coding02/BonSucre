@@ -21,8 +21,8 @@ namespace FinalBonSucreApp
             SqlCommand addCommand = new SqlCommand();
             addCommand.Connection = con;
             addCommand.CommandText = """
-                INSERT INTO Reviews (ReviewId, CustomerId, DessertId, Score)
-                VALUES (@ReviewId, @CustomerId, @DessertId, @Score);
+                INSERT INTO Reviews (CustomerId, DessertId, Score)
+                VALUES (@CustomerId, @DessertId, @Score);
                 SELECT SCOPE_IDENTITY();
                 """;
             addCommand.Parameters.AddWithValue("@ReviewId", review.ReviewId);

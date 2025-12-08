@@ -32,42 +32,47 @@
             CBoxCustomer = new ComboBox();
             CBoxDessert = new ComboBox();
             GBoxAddReview = new GroupBox();
+            BtnShowAllReviews = new Button();
+            BtnAddReview = new Button();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             TxtReviewScore = new TextBox();
-            BtnAddReview = new Button();
+            BtnAddDessert = new Button();
+            BtnDeleteCustomer = new Button();
+            BtnDeleteDessert = new Button();
             GBoxAddReview.SuspendLayout();
             SuspendLayout();
             // 
             // BtnAddCustomer
             // 
-            BtnAddCustomer.Location = new Point(521, 61);
+            BtnAddCustomer.Location = new Point(517, 45);
             BtnAddCustomer.Name = "BtnAddCustomer";
-            BtnAddCustomer.Size = new Size(168, 90);
+            BtnAddCustomer.Size = new Size(168, 56);
             BtnAddCustomer.TabIndex = 0;
-            BtnAddCustomer.Text = "Add Customer";
+            BtnAddCustomer.Text = "Add a Customer";
             BtnAddCustomer.UseVisualStyleBackColor = true;
             BtnAddCustomer.Click += BtnAddCustomer_Click;
             // 
-            // comboBox1
+            // CBoxCustomer
             // 
             CBoxCustomer.FormattingEnabled = true;
             CBoxCustomer.Location = new Point(230, 30);
-            CBoxCustomer.Name = "comboBox1";
+            CBoxCustomer.Name = "CBoxCustomer";
             CBoxCustomer.Size = new Size(182, 33);
             CBoxCustomer.TabIndex = 1;
             // 
-            // comboBox2
+            // CBoxDessert
             // 
             CBoxDessert.FormattingEnabled = true;
             CBoxDessert.Location = new Point(230, 81);
-            CBoxDessert.Name = "comboBox2";
+            CBoxDessert.Name = "CBoxDessert";
             CBoxDessert.Size = new Size(182, 33);
             CBoxDessert.TabIndex = 2;
             // 
             // GBoxAddReview
             // 
+            GBoxAddReview.Controls.Add(BtnShowAllReviews);
             GBoxAddReview.Controls.Add(BtnAddReview);
             GBoxAddReview.Controls.Add(label3);
             GBoxAddReview.Controls.Add(label2);
@@ -81,6 +86,26 @@
             GBoxAddReview.TabIndex = 3;
             GBoxAddReview.TabStop = false;
             GBoxAddReview.Text = "Add Review";
+            // 
+            // BtnShowAllReviews
+            // 
+            BtnShowAllReviews.Location = new Point(93, 241);
+            BtnShowAllReviews.Name = "BtnShowAllReviews";
+            BtnShowAllReviews.Size = new Size(161, 34);
+            BtnShowAllReviews.TabIndex = 8;
+            BtnShowAllReviews.Text = "Show all Reviews";
+            BtnShowAllReviews.UseVisualStyleBackColor = true;
+            BtnShowAllReviews.Click += BtnShowAllReviews_Click;
+            // 
+            // BtnAddReview
+            // 
+            BtnAddReview.Location = new Point(93, 198);
+            BtnAddReview.Name = "BtnAddReview";
+            BtnAddReview.Size = new Size(161, 34);
+            BtnAddReview.TabIndex = 7;
+            BtnAddReview.Text = "Add Review";
+            BtnAddReview.UseVisualStyleBackColor = true;
+            BtnAddReview.Click += BtnAddReview_Click;
             // 
             // label3
             // 
@@ -117,25 +142,49 @@
             TxtReviewScore.Size = new Size(182, 31);
             TxtReviewScore.TabIndex = 3;
             // 
-            // BtnAddReview
+            // BtnAddDessert
             // 
-            BtnAddReview.Location = new Point(93, 198);
-            BtnAddReview.Name = "BtnAddReview";
-            BtnAddReview.Size = new Size(161, 34);
-            BtnAddReview.TabIndex = 7;
-            BtnAddReview.Text = "Add Review";
-            BtnAddReview.UseVisualStyleBackColor = true;
-            BtnAddReview.Click += BtnAddReview_Click;
+            BtnAddDessert.Location = new Point(517, 169);
+            BtnAddDessert.Name = "BtnAddDessert";
+            BtnAddDessert.Size = new Size(168, 56);
+            BtnAddDessert.TabIndex = 4;
+            BtnAddDessert.Text = "Add a Dessert";
+            BtnAddDessert.UseVisualStyleBackColor = true;
+            BtnAddDessert.Click += BtnAddDessert_Click;
+            // 
+            // BtnDeleteCustomer
+            // 
+            BtnDeleteCustomer.Location = new Point(517, 107);
+            BtnDeleteCustomer.Name = "BtnDeleteCustomer";
+            BtnDeleteCustomer.Size = new Size(168, 56);
+            BtnDeleteCustomer.TabIndex = 5;
+            BtnDeleteCustomer.Text = "Delete a Customer";
+            BtnDeleteCustomer.UseVisualStyleBackColor = true;
+            BtnDeleteCustomer.Click += BtnDeleteCustomer_Click;
+            // 
+            // BtnDeleteDessert
+            // 
+            BtnDeleteDessert.Location = new Point(517, 231);
+            BtnDeleteDessert.Name = "BtnDeleteDessert";
+            BtnDeleteDessert.Size = new Size(168, 56);
+            BtnDeleteDessert.TabIndex = 6;
+            BtnDeleteDessert.Text = "Delete a Dessert";
+            BtnDeleteDessert.UseVisualStyleBackColor = true;
+            BtnDeleteDessert.Click += BtnDeleteDessert_Click;
             // 
             // BonSucreForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(BtnDeleteDessert);
+            Controls.Add(BtnDeleteCustomer);
+            Controls.Add(BtnAddDessert);
             Controls.Add(GBoxAddReview);
             Controls.Add(BtnAddCustomer);
             Name = "BonSucreForm";
             Text = "Bon Sucre";
+            Load += BonSucreForm_Load;
             GBoxAddReview.ResumeLayout(false);
             GBoxAddReview.PerformLayout();
             ResumeLayout(false);
@@ -152,5 +201,9 @@
         private Label label2;
         private Label label1;
         private Button BtnAddReview;
+        private Button BtnAddDessert;
+        private Button BtnDeleteCustomer;
+        private Button BtnDeleteDessert;
+        private Button BtnShowAllReviews;
     }
 }

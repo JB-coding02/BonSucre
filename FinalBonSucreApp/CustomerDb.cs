@@ -26,8 +26,8 @@ namespace FinalBonSucreApp
             SqlCommand addCommand = new SqlCommand();
             addCommand.Connection = con;
             addCommand.CommandText = """
-                INSERT INTO Customers (CustomerId, Name, Email, DateOfBirth)
-                VALUES (@CustomerId, @Name, @Email, @DateOfBirth)
+                INSERT INTO Customers (Name, Email, DateOfBirth)
+                VALUES (@Name, @Email, @DateOfBirth)
                 SELECT SCOPE_IDENTITY();
                 """;
             addCommand.Parameters.AddWithValue("@CustomerId", customer.CustomerID);
@@ -56,7 +56,7 @@ namespace FinalBonSucreApp
             // Prepare SQL command
             // Raw string literal - https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/raw-string
             string query = """
-            SELECT DessertId, Email, Name, DateOfBirth
+            SELECT CustomerId, Email, Name, DateOfBirth
             FROM Customers
             ORDER BY Name ASC
             """;
@@ -148,6 +148,29 @@ namespace FinalBonSucreApp
         public static Customer GetCustomer(int CustomerId)
         {
             throw new NotImplementedException();
+        }
+
+        internal static void DeleteCustomerByName(string? customerName)
+        {
+            // Get a database connection
+            SqlConnection con = GetConnection();
+            // Open connection
+            con.Open();
+            // Prepare SQL command
+            string query = """
+            DELETE FROM Customers
+            WHERE Name = @CustomerName
+            """;
+            SqlCommand deleteCommand = new()
+            {
+                Connection = con,
+                CommandText = query
+            };
+            deleteCommand.Parameters.AddWithValue("@CustomerName", customerName);
+            // Execute command on the db
+            deleteCommand.ExecuteNonQuery();
+            // Close connection to database
+            con.Close();
         }
     }
 }

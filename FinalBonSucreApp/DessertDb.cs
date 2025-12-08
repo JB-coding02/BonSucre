@@ -22,8 +22,8 @@ namespace FinalBonSucreApp
             SqlCommand addCommand = new SqlCommand();
             addCommand.Connection = con;
             addCommand.CommandText = """
-                INSERT INTO Dessert (DessertId, Name, Price, Category)
-                VALUES (@DessertId, @Name, @Price, @Category);
+                INSERT INTO Desserts (Name, Price, Category)
+                VALUES (@Name, @Price, @Category);
                 SELECT SCOPE_IDENTITY();
                 """;
             addCommand.Parameters.AddWithValue("@DessertId", dessert.Name);
@@ -37,7 +37,7 @@ namespace FinalBonSucreApp
             // Execute Insert Query
             addCommand.ExecuteNonQuery();
 
-            // Close the connecction to the database
+            // Close the connection to the database
             con.Close();
         }
 
@@ -74,7 +74,7 @@ namespace FinalBonSucreApp
                     Name = reader["Name"].ToString(),
                     DessertId = Convert.ToInt32(reader["DessertId"]),
                     Price = Convert.ToDouble(reader["Price"]),
-                    Category = Convert.ToInt32(reader["Category"])
+                    Category = Convert.ToString(reader["Category"])
                 };
 
                 //Make sure to add each product to the list so it gets returned.
