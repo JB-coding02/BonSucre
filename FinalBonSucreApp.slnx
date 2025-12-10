@@ -1,4 +1,6 @@
 <Solution>
-  <Folder Name="/Solution Items/" />
+  <Folder Name="/Solution Items/">
+    <File Path="FinalBonSucreApp/BonSucreDB.sql" />
+  </Folder>
   <Project Path="FinalBonSucreApp/FinalBonSucreApp.csproj" />
 </Solution>

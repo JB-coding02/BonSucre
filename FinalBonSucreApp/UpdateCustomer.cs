@@ -37,29 +37,43 @@ namespace FinalBonSucreApp
         private void UpdateTxtBoxes()
         {
             // Guard: no current row or no data bound item
-            if (DGVCustomers.CurrentRow == null)
+            if (DGVCustomers?.CurrentRow == null)
                 return;
 
-            DataRowView? rowView = DGVCustomers.CurrentRow.DataBoundItem as DataRowView;
+            DataRowView? rowView = DGVCustomers?.CurrentRow?.DataBoundItem as DataRowView;
             if (rowView == null)
                 return;
 
             // Extract values from the selected DataRowView using the column names used in the query.
-            string customerName = Convert.ToString(rowView["CustomerName"]);
+            string CustomerName = Convert.ToString(rowView["Name"]) ?? string.Empty;
 
             // If your form contains a TextBox named "TxtName", set its Text.
             // This uses Controls["controlName"] so it is safe even if the control isn't present.
-            if (this.Controls.ContainsKey("TxtName") && this.Controls["TxtName"] is TextBox txtName)
+            if (this.Controls.ContainsKey("TxtCustomerName") && this.Controls["TxtCustomerName"] is TextBox TxtName)
             {
-                txtName.Text = customerName;
+                TxtName.Text = CustomerName;
             }
 
             // Example: if you also selected CustomerId in the query and have a TextBox named "TxtCustomerId".
-            if (rowView.Row.Table.Columns.Contains("CustomerId") &&
-                this.Controls.ContainsKey("TxtCustomerId") &&
-                this.Controls["TxtCustomerId"] is TextBox txtCustomerId)
+            if (rowView.Row.Table.Columns.Contains("Id") &&
+                this.Controls.ContainsKey("TxtId") &&
+                this.Controls["TxtId"] is TextBox TxtId)
             {
-                txtCustomerId.Text = Convert.ToString(rowView["CustomerId"]) ?? string.Empty;
+                TxtId.Text = Convert.ToString(rowView["Id"]) ?? string.Empty;
+            }
+
+            if (rowView.Row.Table.Columns.Contains("Email") &&
+                this.Controls.ContainsKey("TxtCustomerEmail") &&
+                this.Controls["TxtCustomerEmail"] is TextBox txtCustomerEmail)
+            {
+                txtCustomerEmail.Text = Convert.ToString(rowView["Email"])?.Trim();
+            }
+
+            if (rowView.Row.Table.Columns.Contains("DOB") &&
+                this.Controls.ContainsKey("TxtCustomerDateOfBirth") &&
+                this.Controls["TxtCustomerDateOfBirth"] is TextBox txtCustomerDateOfBirth)
+            {
+                txtCustomerDateOfBirth.Text = Convert.ToString(rowView["DOB"]) ?? string.Empty;
             }
         }
 
@@ -68,7 +82,10 @@ namespace FinalBonSucreApp
             try
             {
                 string query = """
-                SELECT Name AS CustomerName
+                SELECT Name,
+                    CustomerId AS Id,
+                    Email,
+                    DateOfBirth AS DOB
                 FROM Customers
                 ORDER BY Name ASC
                 """;
@@ -81,8 +98,17 @@ namespace FinalBonSucreApp
                 DGVCustomers.DataSource = table;
 
                 // Optional: format columns
+                if (DGVCustomers.Columns.Contains("Name"))
+                    DGVCustomers.Columns["Name"]?.DefaultCellStyle.Format = "";
+
                 if (DGVCustomers.Columns.Contains("CustomerId"))
-                    DGVCustomers.Columns["CustomerId"]?.DefaultCellStyle.Format = "C2";
+                    DGVCustomers.Columns["CustomerId"]?.DefaultCellStyle.Format = "";
+
+                if (DGVCustomers.Columns.Contains("CustomerEmail"))
+                    DGVCustomers.Columns["CustomerEmail"]?.DefaultCellStyle.Format = "";
+
+                if (DGVCustomers.Columns.Contains("DOB"))
+                    DGVCustomers.Columns["DOB"]?.DefaultCellStyle.Format = "D1";
 
                 // Make grid read-only and adjust sizing
                 DGVCustomers.ReadOnly = true;

@@ -10,8 +10,8 @@ namespace FinalBonSucreApp
 
         public static SqlConnection GetConnection()
         {
-            // Create and return a connection to the database
-            return new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BonSucre;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;Command Timeout=30");
+            // For LocalDB prefer no encryption and longer connect timeout
+            return new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BonSucre;Integrated Security=True;Connect Timeout=90;Encrypt=False;TrustServerCertificate=True;Application Intent=ReadWrite;Command Timeout=60");
         }
         public static void AddDessert(Dessert dessert)
         {
@@ -43,47 +43,29 @@ namespace FinalBonSucreApp
 
         public static List<Dessert> GetAllDesserts()
         {
-            // Get a database connection
-            SqlConnection con = GetConnection();
-
-            // Open connection
-            con.Open();
-
-            // Prepare SQL command
-            // Raw string literal - https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/raw-string
-            string query = """
-            SELECT DessertId, Price, Name, Category
-            FROM Desserts
-            ORDER BY Name ASC
-            """;
-            SqlCommand selectCommand = new()
+            var allDesserts = new List<Dessert>();
+            using SqlConnection con = GetConnection();
+            using SqlCommand selectCommand = new()
             {
                 Connection = con,
-                CommandText = query
+                CommandText = @"
+                    SELECT DessertId, Price, Name, Category
+                    FROM Desserts
+                    ORDER BY Name ASC
+                "
             };
-
-            // Execute command on the db
-            SqlDataReader reader = selectCommand.ExecuteReader();
-
-            // Store the results
-            List<Dessert> allDesserts = new();
+            con.Open();
+            using SqlDataReader reader = selectCommand.ExecuteReader();
             while (reader.Read())
             {
-                Dessert dessert = new()
+                allDesserts.Add(new Dessert
                 {
                     Name = reader["Name"].ToString(),
                     DessertId = Convert.ToInt32(reader["DessertId"]),
                     Price = Convert.ToDouble(reader["Price"]),
                     Category = Convert.ToString(reader["Category"])
-                };
-
-                //Make sure to add each product to the list so it gets returned.
-                allDesserts.Add(dessert);
+                });
             }
-
-            // Close connection
-            con.Close();
-
             return allDesserts;
         }
 

@@ -54,7 +54,6 @@
             // 
             TxtId.Location = new Point(119, 358);
             TxtId.Name = "TxtId";
-            TxtId.ReadOnly = true;
             TxtId.Size = new Size(150, 31);
             TxtId.TabIndex = 3;
             // 
@@ -113,7 +112,6 @@
             // 
             TxtCustomerDateOfBirth.Location = new Point(119, 395);
             TxtCustomerDateOfBirth.Name = "TxtCustomerDateOfBirth";
-            TxtCustomerDateOfBirth.ReadOnly = true;
             TxtCustomerDateOfBirth.Size = new Size(150, 31);
             TxtCustomerDateOfBirth.TabIndex = 10;
             // 
