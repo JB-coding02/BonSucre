@@ -44,65 +44,73 @@
             // DGVDesserts
             // 
             DGVDesserts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVDesserts.Location = new Point(12, 12);
+            DGVDesserts.Location = new Point(8, 7);
+            DGVDesserts.Margin = new Padding(2, 2, 2, 2);
             DGVDesserts.Name = "DGVDesserts";
             DGVDesserts.RowHeadersWidth = 62;
-            DGVDesserts.Size = new Size(776, 225);
+            DGVDesserts.Size = new Size(543, 151);
             DGVDesserts.TabIndex = 0;
             // 
             // TxtDessertName
             // 
-            TxtDessertName.Location = new Point(110, 270);
+            TxtDessertName.Location = new Point(77, 162);
+            TxtDessertName.Margin = new Padding(2, 2, 2, 2);
             TxtDessertName.Name = "TxtDessertName";
-            TxtDessertName.Size = new Size(150, 31);
+            TxtDessertName.Size = new Size(106, 23);
             TxtDessertName.TabIndex = 1;
             // 
             // TxtDessertPrice
             // 
-            TxtDessertPrice.Location = new Point(110, 307);
+            TxtDessertPrice.Location = new Point(77, 184);
+            TxtDessertPrice.Margin = new Padding(2, 2, 2, 2);
             TxtDessertPrice.Name = "TxtDessertPrice";
-            TxtDessertPrice.Size = new Size(150, 31);
+            TxtDessertPrice.Size = new Size(106, 23);
             TxtDessertPrice.TabIndex = 2;
             // 
             // TxtDessertId
             // 
-            TxtDessertId.Location = new Point(110, 344);
+            TxtDessertId.Location = new Point(77, 206);
+            TxtDessertId.Margin = new Padding(2, 2, 2, 2);
             TxtDessertId.Name = "TxtDessertId";
-            TxtDessertId.Size = new Size(150, 31);
+            TxtDessertId.Size = new Size(106, 23);
             TxtDessertId.TabIndex = 3;
             // 
             // LblDessertName
             // 
             LblDessertName.AutoSize = true;
-            LblDessertName.Location = new Point(12, 273);
+            LblDessertName.Location = new Point(8, 164);
+            LblDessertName.Margin = new Padding(2, 0, 2, 0);
             LblDessertName.Name = "LblDessertName";
-            LblDessertName.Size = new Size(59, 25);
+            LblDessertName.Size = new Size(39, 15);
             LblDessertName.TabIndex = 4;
             LblDessertName.Text = "Name";
             // 
             // LblDessertPrice
             // 
             LblDessertPrice.AutoSize = true;
-            LblDessertPrice.Location = new Point(22, 310);
+            LblDessertPrice.Location = new Point(15, 186);
+            LblDessertPrice.Margin = new Padding(2, 0, 2, 0);
             LblDessertPrice.Name = "LblDessertPrice";
-            LblDessertPrice.Size = new Size(49, 25);
+            LblDessertPrice.Size = new Size(33, 15);
             LblDessertPrice.TabIndex = 5;
             LblDessertPrice.Text = "Price";
             // 
             // LblDessertId
             // 
             LblDessertId.AutoSize = true;
-            LblDessertId.Location = new Point(43, 347);
+            LblDessertId.Location = new Point(30, 208);
+            LblDessertId.Margin = new Padding(2, 0, 2, 0);
             LblDessertId.Name = "LblDessertId";
-            LblDessertId.Size = new Size(28, 25);
+            LblDessertId.Size = new Size(17, 15);
             LblDessertId.TabIndex = 6;
             LblDessertId.Text = "Id";
             // 
             // BtnUpdateDessert
             // 
-            BtnUpdateDessert.Location = new Point(266, 273);
+            BtnUpdateDessert.Location = new Point(186, 164);
+            BtnUpdateDessert.Margin = new Padding(2, 2, 2, 2);
             BtnUpdateDessert.Name = "BtnUpdateDessert";
-            BtnUpdateDessert.Size = new Size(112, 99);
+            BtnUpdateDessert.Size = new Size(78, 59);
             BtnUpdateDessert.TabIndex = 7;
             BtnUpdateDessert.Text = "Update";
             BtnUpdateDessert.UseVisualStyleBackColor = true;
@@ -110,25 +118,27 @@
             // 
             // TxtDessertCategory
             // 
-            TxtDessertCategory.Location = new Point(110, 381);
+            TxtDessertCategory.Location = new Point(77, 229);
+            TxtDessertCategory.Margin = new Padding(2, 2, 2, 2);
             TxtDessertCategory.Name = "TxtDessertCategory";
-            TxtDessertCategory.Size = new Size(150, 31);
+            TxtDessertCategory.Size = new Size(106, 23);
             TxtDessertCategory.TabIndex = 8;
             // 
             // LblDessertCategory
             // 
             LblDessertCategory.AutoSize = true;
-            LblDessertCategory.Location = new Point(12, 384);
+            LblDessertCategory.Location = new Point(8, 230);
+            LblDessertCategory.Margin = new Padding(2, 0, 2, 0);
             LblDessertCategory.Name = "LblDessertCategory";
-            LblDessertCategory.Size = new Size(84, 25);
+            LblDessertCategory.Size = new Size(55, 15);
             LblDessertCategory.TabIndex = 9;
             LblDessertCategory.Text = "Category";
             // 
             // UpdateDessertForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(560, 270);
             Controls.Add(LblDessertCategory);
             Controls.Add(TxtDessertCategory);
             Controls.Add(BtnUpdateDessert);
@@ -139,8 +149,9 @@
             Controls.Add(TxtDessertPrice);
             Controls.Add(TxtDessertName);
             Controls.Add(DGVDesserts);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "UpdateDessertForm";
-            Text = "UpdateDessert";
+            Text = "Update Dessert";
             Load += UpdateDessert_Load;
             ((System.ComponentModel.ISupportInitialize)DGVDesserts).EndInit();
             ResumeLayout(false);

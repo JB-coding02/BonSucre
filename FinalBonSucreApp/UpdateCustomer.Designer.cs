@@ -30,65 +30,71 @@
         {
             DGVCustomers = new DataGridView();
             TxtId = new TextBox();
-            LblName = new Label();
-            LblEmail = new Label();
+            LblCustomerName = new Label();
+            LblCustomerEmail = new Label();
             LblCustomerId = new Label();
             BtnUpdate = new Button();
             TxtCustomerName = new TextBox();
             TxtCustomerEmail = new TextBox();
             TxtCustomerDateOfBirth = new TextBox();
-            label1 = new Label();
+            LblCustomerDateOfBirth = new Label();
             ((System.ComponentModel.ISupportInitialize)DGVCustomers).BeginInit();
             SuspendLayout();
             // 
             // DGVCustomers
             // 
             DGVCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVCustomers.Location = new Point(12, 12);
+            DGVCustomers.Location = new Point(8, 7);
+            DGVCustomers.Margin = new Padding(2, 2, 2, 2);
             DGVCustomers.Name = "DGVCustomers";
             DGVCustomers.RowHeadersWidth = 62;
-            DGVCustomers.Size = new Size(776, 265);
+            DGVCustomers.Size = new Size(543, 159);
             DGVCustomers.TabIndex = 0;
             // 
             // TxtId
             // 
-            TxtId.Location = new Point(119, 358);
+            TxtId.Location = new Point(83, 215);
+            TxtId.Margin = new Padding(2, 2, 2, 2);
             TxtId.Name = "TxtId";
-            TxtId.Size = new Size(150, 31);
+            TxtId.Size = new Size(106, 23);
             TxtId.TabIndex = 3;
             // 
-            // LblName
+            // LblCustomerName
             // 
-            LblName.AutoSize = true;
-            LblName.Location = new Point(12, 287);
-            LblName.Name = "LblName";
-            LblName.Size = new Size(59, 25);
-            LblName.TabIndex = 4;
-            LblName.Text = "Name";
+            LblCustomerName.AutoSize = true;
+            LblCustomerName.Location = new Point(8, 172);
+            LblCustomerName.Margin = new Padding(2, 0, 2, 0);
+            LblCustomerName.Name = "LblCustomerName";
+            LblCustomerName.Size = new Size(39, 15);
+            LblCustomerName.TabIndex = 4;
+            LblCustomerName.Text = "Name";
             // 
-            // LblEmail
+            // LblCustomerEmail
             // 
-            LblEmail.AutoSize = true;
-            LblEmail.Location = new Point(17, 324);
-            LblEmail.Name = "LblEmail";
-            LblEmail.Size = new Size(54, 25);
-            LblEmail.TabIndex = 5;
-            LblEmail.Text = "Email";
+            LblCustomerEmail.AutoSize = true;
+            LblCustomerEmail.Location = new Point(12, 194);
+            LblCustomerEmail.Margin = new Padding(2, 0, 2, 0);
+            LblCustomerEmail.Name = "LblCustomerEmail";
+            LblCustomerEmail.Size = new Size(36, 15);
+            LblCustomerEmail.TabIndex = 5;
+            LblCustomerEmail.Text = "Email";
             // 
             // LblCustomerId
             // 
             LblCustomerId.AutoSize = true;
-            LblCustomerId.Location = new Point(43, 361);
+            LblCustomerId.Location = new Point(30, 217);
+            LblCustomerId.Margin = new Padding(2, 0, 2, 0);
             LblCustomerId.Name = "LblCustomerId";
-            LblCustomerId.Size = new Size(28, 25);
+            LblCustomerId.Size = new Size(17, 15);
             LblCustomerId.TabIndex = 6;
             LblCustomerId.Text = "Id";
             // 
             // BtnUpdate
             // 
-            BtnUpdate.Location = new Point(294, 287);
+            BtnUpdate.Location = new Point(206, 172);
+            BtnUpdate.Margin = new Padding(2, 2, 2, 2);
             BtnUpdate.Name = "BtnUpdate";
-            BtnUpdate.Size = new Size(112, 99);
+            BtnUpdate.Size = new Size(78, 59);
             BtnUpdate.TabIndex = 7;
             BtnUpdate.Text = "Update";
             BtnUpdate.UseVisualStyleBackColor = true;
@@ -96,51 +102,56 @@
             // 
             // TxtCustomerName
             // 
-            TxtCustomerName.Location = new Point(119, 284);
+            TxtCustomerName.Location = new Point(83, 170);
+            TxtCustomerName.Margin = new Padding(2, 2, 2, 2);
             TxtCustomerName.Name = "TxtCustomerName";
-            TxtCustomerName.Size = new Size(150, 31);
+            TxtCustomerName.Size = new Size(106, 23);
             TxtCustomerName.TabIndex = 8;
             // 
             // TxtCustomerEmail
             // 
-            TxtCustomerEmail.Location = new Point(119, 321);
+            TxtCustomerEmail.Location = new Point(83, 193);
+            TxtCustomerEmail.Margin = new Padding(2, 2, 2, 2);
             TxtCustomerEmail.Name = "TxtCustomerEmail";
-            TxtCustomerEmail.Size = new Size(150, 31);
+            TxtCustomerEmail.Size = new Size(106, 23);
             TxtCustomerEmail.TabIndex = 9;
             // 
             // TxtCustomerDateOfBirth
             // 
-            TxtCustomerDateOfBirth.Location = new Point(119, 395);
+            TxtCustomerDateOfBirth.Location = new Point(83, 237);
+            TxtCustomerDateOfBirth.Margin = new Padding(2, 2, 2, 2);
             TxtCustomerDateOfBirth.Name = "TxtCustomerDateOfBirth";
-            TxtCustomerDateOfBirth.Size = new Size(150, 31);
+            TxtCustomerDateOfBirth.Size = new Size(106, 23);
             TxtCustomerDateOfBirth.TabIndex = 10;
             // 
-            // label1
+            // LblCustomerDateOfBirth
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 398);
-            label1.Name = "label1";
-            label1.Size = new Size(74, 50);
-            label1.TabIndex = 11;
-            label1.Text = "Date Of\r\nBirth";
+            LblCustomerDateOfBirth.AutoSize = true;
+            LblCustomerDateOfBirth.Location = new Point(8, 239);
+            LblCustomerDateOfBirth.Margin = new Padding(2, 0, 2, 0);
+            LblCustomerDateOfBirth.Name = "LblCustomerDateOfBirth";
+            LblCustomerDateOfBirth.Size = new Size(47, 30);
+            LblCustomerDateOfBirth.TabIndex = 11;
+            LblCustomerDateOfBirth.Text = "Date Of\r\nBirth";
             // 
             // UpdateCustomerForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            ClientSize = new Size(560, 270);
+            Controls.Add(LblCustomerDateOfBirth);
             Controls.Add(TxtCustomerDateOfBirth);
             Controls.Add(TxtCustomerEmail);
             Controls.Add(TxtCustomerName);
             Controls.Add(BtnUpdate);
             Controls.Add(LblCustomerId);
-            Controls.Add(LblEmail);
-            Controls.Add(LblName);
+            Controls.Add(LblCustomerEmail);
+            Controls.Add(LblCustomerName);
             Controls.Add(TxtId);
             Controls.Add(DGVCustomers);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "UpdateCustomerForm";
-            Text = "UpdateCustomer";
+            Text = "Update Customer";
             Load += UpdateCustomer_Load;
             ((System.ComponentModel.ISupportInitialize)DGVCustomers).EndInit();
             ResumeLayout(false);
@@ -151,13 +162,13 @@
 
         private DataGridView DGVCustomers;
         private TextBox TxtId;
-        private Label LblName;
-        private Label LblEmail;
+        private Label LblCustomerName;
+        private Label LblCustomerEmail;
         private Label LblCustomerId;
         private Button BtnUpdate;
         private TextBox TxtCustomerName;
         private TextBox TxtCustomerEmail;
         private TextBox TxtCustomerDateOfBirth;
-        private Label label1;
+        private Label LblCustomerDateOfBirth;
     }
 }

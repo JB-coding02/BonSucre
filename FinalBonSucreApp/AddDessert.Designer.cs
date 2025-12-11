@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
+            LblDessertName = new Label();
+            LblDessertPrice = new Label();
+            LblDessertCategory = new Label();
             TxtName = new TextBox();
             TxtPrice = new TextBox();
             CBoxCategory = new ComboBox();
@@ -38,67 +38,75 @@
             BtnAddDessert = new Button();
             SuspendLayout();
             // 
-            // label1
+            // LblDessertName
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(37, 30);
-            label1.Name = "label1";
-            label1.Size = new Size(59, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Name";
+            LblDessertName.AutoSize = true;
+            LblDessertName.Location = new Point(27, 18);
+            LblDessertName.Margin = new Padding(2, 0, 2, 0);
+            LblDessertName.Name = "LblDessertName";
+            LblDessertName.Size = new Size(39, 15);
+            LblDessertName.TabIndex = 0;
+            LblDessertName.Text = "Name";
             // 
-            // label2
+            // LblDessertPrice
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(47, 73);
-            label2.Name = "label2";
-            label2.Size = new Size(49, 25);
-            label2.TabIndex = 1;
-            label2.Text = "Price";
+            LblDessertPrice.AutoSize = true;
+            LblDessertPrice.Location = new Point(33, 44);
+            LblDessertPrice.Margin = new Padding(2, 0, 2, 0);
+            LblDessertPrice.Name = "LblDessertPrice";
+            LblDessertPrice.Size = new Size(33, 15);
+            LblDessertPrice.TabIndex = 1;
+            LblDessertPrice.Text = "Price";
             // 
-            // label3
+            // LblDessertCategory
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 116);
-            label3.Name = "label3";
-            label3.Size = new Size(84, 25);
-            label3.TabIndex = 2;
-            label3.Text = "Category";
+            LblDessertCategory.AutoSize = true;
+            LblDessertCategory.Location = new Point(11, 70);
+            LblDessertCategory.Margin = new Padding(2, 0, 2, 0);
+            LblDessertCategory.Name = "LblDessertCategory";
+            LblDessertCategory.Size = new Size(55, 15);
+            LblDessertCategory.TabIndex = 2;
+            LblDessertCategory.Text = "Category";
             // 
             // TxtName
             // 
-            TxtName.Location = new Point(120, 27);
+            TxtName.Location = new Point(84, 16);
+            TxtName.Margin = new Padding(2, 2, 2, 2);
             TxtName.Name = "TxtName";
-            TxtName.Size = new Size(150, 31);
+            TxtName.Size = new Size(106, 23);
             TxtName.TabIndex = 3;
             // 
             // TxtPrice
             // 
-            TxtPrice.Location = new Point(120, 70);
+            TxtPrice.Location = new Point(84, 42);
+            TxtPrice.Margin = new Padding(2, 2, 2, 2);
             TxtPrice.Name = "TxtPrice";
-            TxtPrice.Size = new Size(150, 31);
+            TxtPrice.Size = new Size(106, 23);
             TxtPrice.TabIndex = 4;
             // 
             // CBoxCategory
             // 
             CBoxCategory.FormattingEnabled = true;
-            CBoxCategory.Location = new Point(120, 113);
+            CBoxCategory.Location = new Point(84, 68);
+            CBoxCategory.Margin = new Padding(2, 2, 2, 2);
             CBoxCategory.Name = "CBoxCategory";
-            CBoxCategory.Size = new Size(150, 33);
+            CBoxCategory.Size = new Size(106, 23);
             CBoxCategory.TabIndex = 5;
             // 
             // TxtNewCategory
             // 
-            TxtNewCategory.Location = new Point(120, 152);
+            TxtNewCategory.Location = new Point(84, 91);
+            TxtNewCategory.Margin = new Padding(2, 2, 2, 2);
             TxtNewCategory.Name = "TxtNewCategory";
-            TxtNewCategory.Size = new Size(150, 31);
+            TxtNewCategory.Size = new Size(106, 23);
             TxtNewCategory.TabIndex = 6;
             // 
             // BtnAddDessert
             // 
-            BtnAddDessert.Location = new Point(60, 203);
+            BtnAddDessert.Location = new Point(42, 122);
+            BtnAddDessert.Margin = new Padding(2, 2, 2, 2);
             BtnAddDessert.Name = "BtnAddDessert";
-            BtnAddDessert.Size = new Size(141, 34);
+            BtnAddDessert.Size = new Size(99, 20);
             BtnAddDessert.TabIndex = 7;
             BtnAddDessert.Text = "Add Dessert";
             BtnAddDessert.UseVisualStyleBackColor = true;
@@ -106,17 +114,18 @@
             // 
             // AddDessertForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(295, 263);
+            ClientSize = new Size(206, 158);
             Controls.Add(BtnAddDessert);
             Controls.Add(TxtNewCategory);
             Controls.Add(CBoxCategory);
             Controls.Add(TxtPrice);
             Controls.Add(TxtName);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(LblDessertCategory);
+            Controls.Add(LblDessertPrice);
+            Controls.Add(LblDessertName);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "AddDessertForm";
             Text = "Add Dessert";
             ResumeLayout(false);
@@ -125,9 +134,9 @@
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
+        private Label LblDessertName;
+        private Label LblDessertPrice;
+        private Label LblDessertCategory;
         private TextBox TxtName;
         private TextBox TxtPrice;
         private ComboBox CBoxCategory;

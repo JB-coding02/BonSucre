@@ -35,20 +35,22 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Location = new Point(8, 7);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1074, 491);
+            dataGridView1.Size = new Size(752, 295);
             dataGridView1.TabIndex = 0;
             // 
-            // ReviewDisplay
+            // ReviewDisplayForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1098, 515);
+            ClientSize = new Size(769, 309);
             Controls.Add(dataGridView1);
-            Name = "ReviewDisplay";
-            Text = "ReviewDisplay";
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "ReviewDisplayForm";
+            Text = "Review Display";
             Load += ReviewDisplay_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

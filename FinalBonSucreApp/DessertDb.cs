@@ -11,7 +11,7 @@ namespace FinalBonSucreApp
         public static SqlConnection GetConnection()
         {
             // For LocalDB prefer no encryption and longer connect timeout
-            return new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BonSucre;Integrated Security=True;Connect Timeout=90;Encrypt=False;TrustServerCertificate=True;Application Intent=ReadWrite;Command Timeout=60");
+            return new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BonSucre;Integrated Security=True;Connect Timeout=90;Encrypt=False;TrustServerCertificate=True;Application Intent=ReadWrite;Command Timeout=30");
         }
         public static void AddDessert(Dessert dessert)
         {

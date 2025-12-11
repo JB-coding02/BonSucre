@@ -29,67 +29,74 @@
         private void InitializeComponent()
         {
             TxtName = new TextBox();
-            LblName = new Label();
+            LblCustomerName = new Label();
             TxtEmail = new TextBox();
-            LblEmail = new Label();
-            LblDateOfBirth = new Label();
+            LblCustomerEmail = new Label();
+            LblCustomerDateOfBirth = new Label();
             TxtDateOfBirth = new TextBox();
             BtnAddCustomer = new Button();
             SuspendLayout();
             // 
             // TxtName
             // 
-            TxtName.Location = new Point(170, 24);
+            TxtName.Location = new Point(119, 14);
+            TxtName.Margin = new Padding(2, 2, 2, 2);
             TxtName.Name = "TxtName";
-            TxtName.Size = new Size(150, 31);
+            TxtName.Size = new Size(106, 23);
             TxtName.TabIndex = 0;
             // 
-            // LblName
+            // LblCustomerName
             // 
-            LblName.AutoSize = true;
-            LblName.Location = new Point(74, 27);
-            LblName.Name = "LblName";
-            LblName.Size = new Size(63, 25);
-            LblName.TabIndex = 1;
-            LblName.Text = "Name:";
+            LblCustomerName.AutoSize = true;
+            LblCustomerName.Location = new Point(49, 14);
+            LblCustomerName.Margin = new Padding(2, 0, 2, 0);
+            LblCustomerName.Name = "LblCustomerName";
+            LblCustomerName.Size = new Size(42, 15);
+            LblCustomerName.TabIndex = 1;
+            LblCustomerName.Text = "Name:";
             // 
             // TxtEmail
             // 
-            TxtEmail.Location = new Point(170, 61);
+            TxtEmail.Location = new Point(119, 37);
+            TxtEmail.Margin = new Padding(2, 2, 2, 2);
             TxtEmail.Name = "TxtEmail";
-            TxtEmail.Size = new Size(150, 31);
+            TxtEmail.Size = new Size(106, 23);
             TxtEmail.TabIndex = 2;
             // 
-            // LblEmail
+            // LblCustomerEmail
             // 
-            LblEmail.AutoSize = true;
-            LblEmail.Location = new Point(79, 64);
-            LblEmail.Name = "LblEmail";
-            LblEmail.Size = new Size(58, 25);
-            LblEmail.TabIndex = 3;
-            LblEmail.Text = "Email:";
+            LblCustomerEmail.AutoSize = true;
+            LblCustomerEmail.Location = new Point(55, 38);
+            LblCustomerEmail.Margin = new Padding(2, 0, 2, 0);
+            LblCustomerEmail.Name = "LblCustomerEmail";
+            LblCustomerEmail.Size = new Size(39, 15);
+            LblCustomerEmail.TabIndex = 3;
+            LblCustomerEmail.Text = "Email:";
             // 
-            // LblDateOfBirth
+            // LblCustomerDateOfBirth
             // 
-            LblDateOfBirth.AutoSize = true;
-            LblDateOfBirth.Location = new Point(18, 101);
-            LblDateOfBirth.Name = "LblDateOfBirth";
-            LblDateOfBirth.Size = new Size(119, 25);
-            LblDateOfBirth.TabIndex = 4;
-            LblDateOfBirth.Text = "Date Of Birth:";
+            LblCustomerDateOfBirth.AutoSize = true;
+            LblCustomerDateOfBirth.Location = new Point(13, 61);
+            LblCustomerDateOfBirth.Margin = new Padding(2, 0, 2, 0);
+            LblCustomerDateOfBirth.Name = "LblCustomerDateOfBirth";
+            LblCustomerDateOfBirth.Size = new Size(78, 15);
+            LblCustomerDateOfBirth.TabIndex = 4;
+            LblCustomerDateOfBirth.Text = "Date Of Birth:";
             // 
             // TxtDateOfBirth
             // 
-            TxtDateOfBirth.Location = new Point(170, 98);
+            TxtDateOfBirth.Location = new Point(119, 59);
+            TxtDateOfBirth.Margin = new Padding(2, 2, 2, 2);
             TxtDateOfBirth.Name = "TxtDateOfBirth";
-            TxtDateOfBirth.Size = new Size(150, 31);
+            TxtDateOfBirth.Size = new Size(106, 23);
             TxtDateOfBirth.TabIndex = 5;
             // 
             // BtnAddCustomer
             // 
-            BtnAddCustomer.Location = new Point(79, 156);
+            BtnAddCustomer.Location = new Point(55, 94);
+            BtnAddCustomer.Margin = new Padding(2, 2, 2, 2);
             BtnAddCustomer.Name = "BtnAddCustomer";
-            BtnAddCustomer.Size = new Size(168, 34);
+            BtnAddCustomer.Size = new Size(118, 20);
             BtnAddCustomer.TabIndex = 6;
             BtnAddCustomer.Text = "Add Customer";
             BtnAddCustomer.UseVisualStyleBackColor = true;
@@ -97,16 +104,17 @@
             // 
             // AddCustomerForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(343, 213);
+            ClientSize = new Size(240, 128);
             Controls.Add(BtnAddCustomer);
             Controls.Add(TxtDateOfBirth);
-            Controls.Add(LblDateOfBirth);
-            Controls.Add(LblEmail);
+            Controls.Add(LblCustomerDateOfBirth);
+            Controls.Add(LblCustomerEmail);
             Controls.Add(TxtEmail);
-            Controls.Add(LblName);
+            Controls.Add(LblCustomerName);
             Controls.Add(TxtName);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "AddCustomerForm";
             Text = "Add Customer";
             ResumeLayout(false);
@@ -116,10 +124,10 @@
         #endregion
 
         private TextBox TxtName;
-        private Label LblName;
+        private Label LblCustomerName;
         private TextBox TxtEmail;
-        private Label LblEmail;
-        private Label LblDateOfBirth;
+        private Label LblCustomerEmail;
+        private Label LblCustomerDateOfBirth;
         private TextBox TxtDateOfBirth;
         private Button BtnAddCustomer;
     }
